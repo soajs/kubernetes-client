@@ -13,6 +13,7 @@ const Batch = require('../lib/batch');
 const Core = require('../lib/core');
 const Extensions = require('../lib/extensions');
 const Rbac = require('../lib/rbac');
+const Metrics = require('../lib/metrics');
 const ThirdPartyResources = require('../lib/third-party-resources');
 
 const defaultName = process.env.NAMESPACE || 'integration-tests';
@@ -73,6 +74,7 @@ function injectApis(options) {
     batch: { Constructor: Batch },
     extensions: { Constructor: Extensions },
     rbac: { Constructor: Rbac },
+    metrics: { Constructor: Metrics },
     thirdPartyResources: {
       Constructor: ThirdPartyResources, options: { group: 'kubernetes-client.com' }
     }
